@@ -1,19 +1,8 @@
-function selectionSort(nums) {
-    for (let i = 0; i < nums.length - 1; i++) {
-        let minIndex = i;
+function selectionSort(nums){
+    let nums.length = n;
 
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[j] < nums[minIndex]) {
-                minIndex = j;
-            }
-        }
-
-        let temp = nums[i];
-        nums[i] = nums[minIndex];
-        nums[minIndex] = temp;
+    for(let i = 0; i < n ; i++){
+        
     }
-    return nums;
-}
 
-let arr = [5, 3, 1, 4];
-console.log(selectionSort(arr));
+}
