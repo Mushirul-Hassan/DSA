@@ -129,17 +129,20 @@ void print10(int n)
     }
 }
 
-void print11 (int n)
+void print11(int n)
 {
-    for (int i = 0;i<n; i++)
+    int start = 1;
+    for (int i = 0; i < n; i++)
     {
-        int stars = i;
-        if (i > n)
-            stars = 2 * n - i;
+        if (i % 2 == 0)
+            start = 1;
+        else
+            start = 0;
 
-        for (int j = 1; j <= stars; j++)
+        for (int j = 0; j <= i; j++)
         {
-            cout << "*";
+            cout << start << " ";
+            start = 1 - start;
         }
 
         cout << endl;
