@@ -72,62 +72,88 @@ void print6(int n)
     }
 }
 
-void print7(int n){
-     for (int i=0; i <n;i++ ){
-        for(int j=0; j<n-i-1;j++){
+void print7(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
             cout << "-";
         }
-         for(int j=0; j<2*i+1; j++){
+        for (int j = 0; j < 2 * i + 1; j++)
+        {
             cout << "*";
         }
-        for(int j=0; j<n-i-1;j++){
+        for (int j = 0; j < n - i - 1; j++)
+        {
             cout << "-";
         }
         cout << endl;
-
-     }
+    }
 }
 
-void print8(int n){
-     for (int i=0; i <n;i++ ){
-        for(int j=0; j<i;j++){
+void print8(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
             cout << "-";
         }
-         for(int j=0; j<2*n - (2*i+1); j++){
+        for (int j = 0; j < 2 * n - (2 * i + 1); j++)
+        {
             cout << "*";
         }
-        for(int j=0; j<i;j++){
+        for (int j = 0; j < i; j++)
+        {
             cout << "-";
         }
         cout << endl;
-
-     }
+    }
 }
 
-void print10(int n){
-     for (int i=0; i <n;i++ ){
-        for(int j=0; j<i;j++){
-            cout << "-";
-        }
-         for(int j=0; j<2*n - (2*i+1); j++){
+void print10(int n)
+{
+    for (int i = 1; i <= 2 * n - 1; i++)
+    {
+        int stars = i;
+        if (i > n)
+            stars = 2 * n - i;
+
+        for (int j = 1; j <= stars; j++)
+        {
             cout << "*";
         }
-        for(int j=0; j<i;j++){
-            cout << "-";
-        }
-        cout << endl;
 
-     }
+        cout << endl;
+    }
+}
+
+void print11 (int n)
+{
+    for (int i = 0;i<n; i++)
+    {
+        int stars = i;
+        if (i > n)
+            stars = 2 * n - i;
+
+        for (int j = 1; j <= stars; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
 }
 int main()
 {
     int t;
-    cin >> t; 
+    cin >> t;
     for (int i = 0; i < t; i++)
     {
         int n;
         cin >> n;
-        print10(n);
+        print11(n);
         // print8(n);
     }
 }
