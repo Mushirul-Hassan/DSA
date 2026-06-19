@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int count(int n)
+int reverse (int n)
 {
     int rev = 0;
     while (n > 0)
@@ -16,5 +16,5 @@ int main()
 {
     int n;
     cin >> n;
-    cout << count(n);
+    cout << reverse(n);
 }
