@@ -11,6 +11,7 @@ void insSort(int n, int arr[])
         j--;
       
     }
+    //put key at arr[0]
     arr[j + 1] = k;
 
    }
