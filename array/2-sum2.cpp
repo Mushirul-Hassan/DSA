@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int tSum(int arr[],   int t, int n)
+void tSum(int arr[],   int t, int n)
 {
     int i = 0;
     int j = n - 1;
@@ -11,6 +11,7 @@ int tSum(int arr[],   int t, int n)
        int sum = arr[i] + arr[j];
        if ( sum == t){
         cout << "Indices: " << i <<" "<< j;
+        break;
        }
 
        else if ( sum < t){
