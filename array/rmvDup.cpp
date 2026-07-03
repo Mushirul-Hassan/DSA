@@ -2,13 +2,17 @@
 using namespace std;
 int rmvDup(vector<int> arr[], int n)
 {
-    int k = arr[n];
-    for (int i = 0; i < n-1; i++)
+    int i = 0;
+    int j = i+1;
+    while (j < n)
     {
-        if (arr[i + 1] != arr[i])
+        if (arr[j] == arr[i])
         {
-            k = arr[i+1]
-        }
+            j++;
+       }else{
+        swap(arr[i+1], arr[j]);
+        i++;
+           }
     }
     return 1;
 }
