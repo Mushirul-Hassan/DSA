@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int rmvDup(vector<int> arr[], int n)
+int rmvDup(int arr[], int n)
 {
     int i = 0;
     int j = i+1;
@@ -12,9 +12,10 @@ int rmvDup(vector<int> arr[], int n)
        }else{
         swap(arr[i+1], arr[j]);
         i++;
+        j++;
            }
     }
-    return 1;
+    return i + 1;
 }
 
 
@@ -28,7 +29,7 @@ int main()
         cin >> arr[i];
     }
     rmvDup(arr, n);
-    for (int i = 0; i < n; i++)
+for (int i = 0; i < n; i++)
     {
         cout << arr[i];
     }
