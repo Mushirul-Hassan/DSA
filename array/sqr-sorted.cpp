@@ -4,8 +4,8 @@ void isSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << sqrt(arr[i]) << " ";
-       
+       arr[i] = arr[i] * arr[i];
+       cout << arr[i] << " ";
     }
 }
 
@@ -20,10 +20,7 @@ int main()
         cin >> arr[i];
     }
     isSort(arr, n);
-     for (int i = 0; i < n; i++)
-    {
-        cout <<  arr[i];
-    }
+   
 
     return 0;
 }
