@@ -2,7 +2,7 @@
 using namespace std;
 void lftRtate(int arr[], int n)
 {
-    int i = 0;
+    int i = arr[0];
     for (int j = 0; j < n-1;j++){
         arr[j-1] = arr[j];
     }
