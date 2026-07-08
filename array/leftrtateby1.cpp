@@ -2,11 +2,13 @@
 using namespace std;
 void lftRtate(int arr[], int n)
 {
-    int i = arr[0];
+    int t = arr[0];
     for (int j = 0; j < n-1;j++){
-        arr[j-1] = arr[j];
+        arr[j] = arr[j+1];
+
     }
-    arr[n-1] = arr[i];
+    arr[n-1] = t;
+    
 }
 
 
@@ -20,7 +22,10 @@ int main()
         cin >> arr[i];
     }
     lftRtate(arr, n);
-    
+     for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
 
     return 0;
 }
