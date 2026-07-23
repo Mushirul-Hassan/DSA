@@ -1,40 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
-void printF( int n, int arr[])
+void printF(int n, int arr[])
 {
 
-    unordered_map<int,int> store;
+  unordered_map<int, int> freq;
 
-    for(int i = 0; i < n ; i++){
-      store[arr[i]] = i;
-    
+  for (int i = 0; i < n; i++)
+  {
+    freq[arr[i]]++;
 
-    if  (store.find(arr[i]) != store.end()){
+    if (freq[arr[i]] > 1)
+    {
       cout << arr[i];
+        break;
     }
-    else {
-      store[arr[i]];
-    }
-}
-    // for (auto it: store){
-    //     cout << it.first << " = "<< it.second << endl;
+  
+    // else
+    // {
+    //   freq[arr[i]] = i;
     // }
-   
+  }
 }
 
 int main()
 {
-    int n;
+  int n;
 
-    cin >> n ;
+  cin >> n;
 
-    int arr[n];
-for (int i = 0; i < n; i++){
+  int arr[n];
+  for (int i = 0; i < n; i++)
+  {
     cin >> arr[i];
-}
-
-
+  }
 
   printF(n, arr);
-   
 }
