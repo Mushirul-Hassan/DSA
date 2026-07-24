@@ -18,8 +18,8 @@ bool twoSum(vector<int> &arr, int target)
 
 int main()
 {
-    int n, target;
-    cin >> n >> target;
+    int n;
+    cin >> n;
 
     vector<int> arr(n);
     for (int i = 0; i < n; i++)
@@ -27,7 +27,8 @@ int main()
         cin >> arr[i];
     }
 
-  
+    int target;
+    cin >> target;
 
     if (twoSum(arr, target))
         cout << "True";
