@@ -1,21 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-int TSum(vector<int> &arr, int target)
+vector<int> TSum(vector<int> &arr, int target)
 {
-    int n = arr.size();
     unordered_map<int, int> mp;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < arr.size(); i++)
     {
         int need = target - arr[i];
-
         if (mp.find(need) != mp.end())
         {
-            return mp[need] , i;
+            return {mp[need], i};
         }
-
         mp[arr[i]] = i;
     }
-    return 0;
+    return {};
 }
 int main()
 {
@@ -27,7 +24,16 @@ int main()
         cin >> arr[i];
     }
 
-    cout << TSum(arr, target);
+    vector<int> result = TSum(arr, target);
+
+    if (!result.empty())
+    {
+        cout << result[0] << " " << result[1];
+    }
+    else
+    {
+        cout << "No solution found";
+    }
 
     return 0;
 }
