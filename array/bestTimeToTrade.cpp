@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+int stocks(vector<int> &nums, int n)
+{
+    int profit = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++)
+        {
+            int currProfit = nums[j] - nums[i];
+            if (currProfit > profit)
+            {
+                profit = currProfit;
+            }
+        }
+        // cout << profit;
+        // return profit;
+    }
+    // return 0;
+      return profit != 0 ? profit : 0;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> nums(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> nums[i];
+    }
+
+    cout << stocks(nums, n);
+
+    return 0;
+}
