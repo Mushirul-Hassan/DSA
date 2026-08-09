@@ -37,3 +37,5 @@ int main()
 
     return 0;
 }
+
+//it works on the principle of 3 pointers, i for 0's, j for 1's and k for 2's. We keep swapping the elements to their respective positions.

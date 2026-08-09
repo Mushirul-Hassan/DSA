@@ -37,3 +37,5 @@ for (int i = 0; i < n; i++)
 
     return 0;
 }
+
+// we have to check the current element with the previous one, if they are same we will move forward and if they are different we will swap the current element with the next position of the last unique element. In the end we will return the count of unique elements.

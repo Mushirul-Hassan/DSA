@@ -20,7 +20,7 @@ int majorityElement(vector<int> &nums, int n)
             count--;
         }
     }
-   
+
     return i;
 }
 int main()
@@ -37,3 +37,5 @@ int main()
 
     return 0;
 }
+
+// it basically works on the principle of canceling out the elements which are not majority and keeping track of the count of the current candidate for majority element. If the count reaches zero, we select a new candidate. In the end, the candidate left is the majority element.

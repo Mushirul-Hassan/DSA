@@ -28,3 +28,7 @@ int main()
 
     return 0;
 }
+// we have to take best(current sum) and ans(largest sum) - both on the first 0th index,
+// then starting the loop from next index we would choose between the current index or sum of current with previous best sum,
+// then we would put the chosen new best sum and compare with the old larg sum 
+// then again update the ans.

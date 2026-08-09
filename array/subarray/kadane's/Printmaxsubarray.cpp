@@ -37,6 +37,10 @@ vector<int> maxSubarray(vector<int> &nums, int n)
     return arr;
 }
 
+// take start for starting index and best start and end for assigning after the largest sum subarray is found
+// start is assigned on the curr index whenever v2 is larger than v1
+// the best end is assigned at the current index since if the v2 is last element then it would be the start and end index
+//else it would add up till the sum becomes more , then that last index would be best end.
 int main()
 {
     int n;
