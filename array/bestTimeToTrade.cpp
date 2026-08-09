@@ -27,7 +27,8 @@ int stocks(vector<int> &nums, int n)
             int profit  = nums[r] - nums[l];
             maxP = max(maxP,profit);
         } else {
-            l = r;
+            l = r; // cause all the elements inbetween prev l and r were already bigger than l,
+                   // it prevetns negative values
         }
         r++;
     }
