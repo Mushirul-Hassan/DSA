@@ -4,17 +4,20 @@ vector<int> leaders(vector<int> &arr, int n)
 {
     // int r = n-1;
     vector<int> leadArr;
-    // int l = -1;
+    int maxL = INT_MIN;
+    // int l = 0;
 
-    for (int i = 0; i <= n-1; i++)
+    for (int i = n - 1; i >= 0; i--)
     {
-        if (arr[i] > arr[i + 1])
+        if (arr[i] >= maxL)
         {
             // r = arr[i];
             // l = i;
             leadArr.push_back(arr[i]);
+            maxL = max(maxL, arr[i]);
         }
     }
+    reverse(leadArr.begin(), leadArr.end());
 
     return leadArr;
 }
