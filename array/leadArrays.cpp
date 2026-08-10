@@ -14,7 +14,7 @@ vector<int> leaders(vector<int> &arr, int n)
             // r = arr[i];
             // l = i;
             leadArr.push_back(arr[i]);
-            maxL = max(maxL, arr[i]);
+            maxL =  arr[i];
         }
     }
     reverse(leadArr.begin(), leadArr.end());
