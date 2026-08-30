@@ -4,29 +4,21 @@ int search(vector<int> &arr, int n, int target)
 {
     int l = 0;
     int r = n - 1;
-    while (l < r)
+    int ans = n;
+    while (l <= r)
     {
         int mid = (l + r) / 2;
         if (arr[mid] >= target)
         {
-            return mid;
+            ans = mid;
+            r = mid - 1;
         }
-        else if (arr[mid] < target)
+        else
         {
-            if (arr[mid + 1] == arr[mid - 1])
-            {
-                return mid - 1;
-            }
-            // if (arr.back() == target) {
+            l = mid + 1;
         }
-        // else {
-        // 	return n;
-        // }
     }
-    // else {
-    // 				r = mid - 1;
-    // 			}
-    return n;
+    return ans;
 }
 
 int main()
