@@ -11,11 +11,11 @@ int floor(vector<int> &arr, int n, int target)
         if (arr[mid] <= target)
         {
             ans = mid;
-            r = mid - 1;
+            l = mid + 1;
         }
         else
         {
-            l = mid + 1;
+            r = mid - 1;
         }
     }
     return ans;
