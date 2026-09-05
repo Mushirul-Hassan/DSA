@@ -12,8 +12,8 @@ int leftMost(vector<int> &nums, int target, int n)
         int mid = (l + r) / 2;
         if (nums[mid] == target)
         {
-            count += 1;
             r = mid - 1;
+            count += 1;
         }
         else if (nums[mid] > target)
         {
@@ -38,8 +38,8 @@ int rightMost(vector<int> &nums, int target, int n)
         int mid = (l + r) / 2;
         if (nums[mid] == target)
         {
-            count += 1;
             l = mid + 1;
+            count += 1;
         }
         else if (nums[mid] > target)
         {
