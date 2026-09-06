@@ -13,7 +13,7 @@ int leftMost(vector<int> &nums, int target, int n)
         if (nums[mid] == target)
         {
             r = mid - 1;
-            count += 1;
+            count  = mid;
         }
         else if (nums[mid] > target)
         {
@@ -39,7 +39,7 @@ int rightMost(vector<int> &nums, int target, int n)
         if (nums[mid] == target)
         {
             l = mid + 1;
-            count += 1;
+            count = mid;
         }
         else if (nums[mid] > target)
         {
@@ -58,7 +58,7 @@ int numberOccurence(vector<int> &nums, int target, int n)
     int left_most = leftMost(nums, target, n);
     int right_most = rightMost(nums, target, n);
 
-    return left_most + right_most;
+    return right_most - left_most + 1;
 }
 
 int main()
