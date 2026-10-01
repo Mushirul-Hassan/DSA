@@ -8,7 +8,7 @@ int findMin(vector<int> &arr, int n)
     while (l <= r)
     {
         int mid = (l + r) / 2;
-        if (arr[mid] < minE)
+        if (arr[mid] < arr[minE])
         {
             minE = mid;
             r = mid - 1;
