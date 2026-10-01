@@ -2,10 +2,9 @@
 using namespace std;
 int findMin(vector<int> &arr, int n)
 {
-    int n = arr.size();
     int l = 0;
     int r = n - 1;
-    int minE = INT_MAX;
+    int minE = r;
     while (l <= r)
     {
         int mid = (l + r) / 2;
