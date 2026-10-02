@@ -4,17 +4,17 @@ int search(vector<int> &nums, int target, int n)
 {
     int l = 0;
     int r = n - 1;
-    int ans = -1;
+    int min = r;
     while (l <= r)
     {
         int mid = (l + r) / 2;
         if (mid > target)
         {
-            ans = mid;
+            min = mid;
             l = mid + 1;
         }
     }
-    return ans;
+    return nums[min];
 }
 
 int main()
