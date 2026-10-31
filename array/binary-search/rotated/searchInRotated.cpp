@@ -89,7 +89,7 @@ int binarySearch(vector<int> &nums, int target, int n, int l, int r)
         if (nums[mid] == target)
         {
             ans = mid;
-            l = mid - 1;
+            r = mid - 1;
         }
         else if (nums[mid] > target)
         {
