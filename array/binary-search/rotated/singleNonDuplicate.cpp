@@ -4,31 +4,27 @@ int singleNonDuplicate(vector<int> &nums, int n)
 {
     int l = 0;
     int r = n - 1;
-    int single = 0;
 
-    while (l <= r)
+    while (l < r)
     {
         int mid = (l + r) / 2;
-        int even = (r - mid + 1) % 2 == 0;
-        int odd = (r - mid + 1) % 2 != 0;
+        int l =  r - mid;
         if (nums[mid] == nums[mid + 1])
         {
-            if (odd)
+            if (l % 2 == 0)
             {
-                l = mid + 2;
-                single = nums[mid];
+                l = mid + 1;
             }
             else
             {
-                r = mid - 2;
+                r = mid - 1;
             }
         }
         else
         {
-            if (even)
+            if (l % 2 == 0)
             {
                 r = mid;
-                single = nums[mid];
             }
             else
             {
@@ -36,7 +32,7 @@ int singleNonDuplicate(vector<int> &nums, int n)
             }
         }
     }
-    return single;
+    return nums[r];
 }
 
 int main()
