@@ -2,21 +2,27 @@
 using namespace std;
 int nthRoot(int n, int m)
 {
-    int ans = -1;
-    for (int i = 0; i <= m; i++)
+    int l = 0;
+    int r = m;
+    while (l <= r)
     {
-        int power = pow(i, n);
+        int mid = (l + r) / 2;
+        int power = pow(mid, n);
         if (power == m)
         {
-            ans = i;
+            return r;
+            break;
         }
         else if (power > m)
         {
-            break;
+            r = mid - 1;
+        }
+        else
+        {
+            l = mid + 1;
         }
     }
-
-    return ans;
+    return -1;
 }
 
 int main()
