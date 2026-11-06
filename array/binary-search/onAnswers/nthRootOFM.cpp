@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+int exp(int mid, int n){
+    
+}
 int nthRoot(int n, int m)
 {
     int l = 0;
@@ -7,7 +11,7 @@ int nthRoot(int n, int m)
     while (l <= r)
     {
         int mid = (l + r) / 2;
-        int power = pow(mid, n);
+        int power = exp(mid, n);
         if (power == m)
         {
             return r;
