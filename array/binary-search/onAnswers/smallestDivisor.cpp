@@ -11,26 +11,26 @@ int findMax(vector<int> &arr, int n)
             max = arr[i];
         }
     }
-    cout << max  << '\n';
+    // cout << max << '\n';
     return max;
 }
 
 int findSum(vector<int> &arr, int n, int mid)
 {
     int sum = 0;
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        sum += (arr[i] + arr[mid] - 1) / arr[mid];
+        sum += (arr[i] + mid - 1) / mid;
         // sum = sum + (double)(arr[i]) / (double)(arr[mid]);
     }
-    cout << sum<< '\n';
+    // cout << sum << '\n';
     return sum;
 }
 
 int smallestDivisor(vector<int> &arr, int n, int threshold)
 {
     int max = findMax(arr, n);
-    int l = 0;
+    int l = 1;
     int h = max;
     int div = -1;
     while (l <= h)
@@ -39,7 +39,7 @@ int smallestDivisor(vector<int> &arr, int n, int threshold)
         int sum = findSum(arr, n, mid);
         if (sum <= threshold)
         {
-            div = arr[mid];
+            div = mid;
             h = mid - 1;
         }
         else
@@ -47,6 +47,7 @@ int smallestDivisor(vector<int> &arr, int n, int threshold)
             l = mid + 1;
         }
     }
+    // cout << "ANS" << div <<  '\n';
     return div;
 }
 
