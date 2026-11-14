@@ -33,7 +33,7 @@ int smallestDivisor(vector<int> &arr, int n, int threshold)
     int l = 1;
     int h = max;
     int div = -1;
-    while (l <= h)
+    while (l <= h)                       
     {
         int mid = (l + h) / 2;
         int sum = findSum(arr, n, mid);
