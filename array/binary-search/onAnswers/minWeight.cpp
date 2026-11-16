@@ -14,38 +14,43 @@ int sum(vector<int> &weights, int n)
 int totalDays(vector<int> &weights, int mid, int n)
 {
     int s = 0;
-    int days = 0;
+    int days = 1;
     for (int i = 0; i < n; i++)
     {
-        s += weights[i];
-        if (s <= mid)
+
+        // cout << s << '\n';
+        if (s + weights[i] > mid)
         {
             days++;
-            s = 0;
+            s = weights[i];
+        }
+        else
+        {
+            s += weights[i];
         }
     }
+    // cout << days << '\n';
     return days;
 }
 
 int shipWithinDays(vector<int> &weights, int n, int days)
 {
-    int wt = -1;
-    int l = 1;
+    int l = *max_element(weights.begin(), weights.end());
     int r = sum(weights, n);
-    while (l <= r)
+    while (l < r)
     {
         int mid = l + (r - l) / 2;
         if (totalDays(weights, mid, n) <= days)
         {
-            wt = mid;
-            r = mid - 1;
+            // wt = mid;
+            r = mid;
         }
         else
         {
             l = mid + 1;
         }
     }
-    return wt;
+    return r;
 }
 
 int main()
