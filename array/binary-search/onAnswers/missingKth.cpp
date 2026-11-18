@@ -3,26 +3,22 @@ using namespace std;
 
 int findKthPositive(vector<int> &arr, int n, int k)
 {
-    int num = 1;
-    int i = 0;
-    while (i < n && k > 0)
+    int l = 0;
+    int r = n - 1;
+    while (l <= r)
     {
-        if (arr[i] == num)
+        int mid = l + (r - l) / 2;
+        int missNums = arr[mid] - (mid + 1);
+        if (missNums < k)
         {
-            i++;
+            l = mid + 1;
         }
         else
         {
-            k--;
+            r = mid - 1;
         }
-        num++;
     }
-
-    while (k--)
-    {
-        num++;
-    }
-    return num - 1;
+    return l + k;
 }
 
 int main()
