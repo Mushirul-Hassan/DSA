@@ -20,11 +20,18 @@ int agrsvCows(vector<int> &arr, int n, int k)
     sort(arr.begin(), arr.end());
     int low_dist = 1;
     int max_dist = arr.back() - arr[0];
-    for (int i = low_dist; i <= max_dist; i++)
+    while (low_dist <= max_dist)
     {
-        if (guessNum(arr, k, i, n))
+
+        int mid = low_dist + (max_dist - low_dist) / 2;
+        if (guessNum(arr, k, mid, n))
         {
-            ans = i;
+            ans = mid;
+            low_dist = mid + 1;
+        }
+        else
+        {
+            max_dist = mid - 1;
         }
     }
 
