@@ -2,14 +2,14 @@
 using namespace std;
 int guessNum(vector<int> &arr, int k, int dist, int n)
 {
-    int count = 0;
-    int i = arr[0];
+    int count = 1;
+    int pos = arr[0];
     for (int i = 1; i < n; i++)
     {
-        if (arr[i] - i >= dist)
+        if (arr[i] - pos >= dist)
         {
             count++;
-            i = arr[i];
+            pos = arr[i];
         }
     }
     return (count >= k);
@@ -19,7 +19,7 @@ int agrsvCows(vector<int> &arr, int n, int k)
     int ans = 0;
     sort(arr.begin(), arr.end());
     int low_dist = 1;
-    int max_dist = arr[n - 1] - arr[0];
+    int max_dist = arr.back() - arr[0];
     for (int i = low_dist; i <= max_dist; i++)
     {
         if (guessNum(arr, k, i, n))
